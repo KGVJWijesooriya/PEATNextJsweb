@@ -9,36 +9,36 @@ import {
 } from "react-icons/md";
 
 const CustomerApp = () => {
-
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-out-cubic",
-      once: false,
-    });
+    if (window.innerWidth >= 768) {
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: false,
+      });
+    }
   }, []);
 
   return (
-    <div className="bg-[#F8A71B] h-screen w-full py-12  overflow-auto flex items-center justify-center">
-      <div className="mx-auto max-w-7xl">
-        <h1 className="text-5xl text-center font-bold mb-12" data-aos="fade-up">
+    <div className="bg-[#F8A71B] min-h-screen w-auto flex items-center justify-center px-4 py-10">
+      <div className="mx-auto max-w-7xl w-full">
+        <h1
+          className="text-4xl sm:text-5xl text-center font-bold mb-10"
+          data-aos="fade-up"
+        >
           Book a Slot
         </h1>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-[5vh]">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           {/* Image Section */}
           <div
-            className="w-full lg:w-1/2 flex justify-center mb-8 lg:mb-0"
+            className="w-full lg:w-1/2 flex justify-center"
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            {/* White circular background */}
-            <div
-              className="relative flex items-center justify-center w-160 h-160 lg:w-96 lg:h-96 
-    lg:bg-white lg:rounded-full lg:shadow-[0_20px_60px_rgba(0,0,0,0.2)]"
-            >
+            <div className="relative flex items-center justify-center w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 bg-white rounded-full shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
               <img
-                className="w-72 lg:w-[14rem]"
+                className="w-52 sm:w-64 lg:w-56"
                 src="assets/images/samsung-galaxy-still(11).png"
                 alt="Mockup"
               />
@@ -51,68 +51,61 @@ const CustomerApp = () => {
             data-aos="fade-up"
             data-aos-delay="400"
           >
-            <h1 className="text-3xl font-bold mb-4">
+            <h1 className="text-2xl sm:text-3xl font-bold mb-4">
               Effortless Parking at Your Fingertips
             </h1>
-            <h3 className="text-lg font-light mb-6">
+            <h3 className="text-base sm:text-lg font-light mb-6">
               With the PEAT Booking App, finding and reserving parking has never
               been easier. Explore available parking slots, book instantly, and
               secure your spot all in just a few taps.
             </h3>
-            <h2 className="text-2xl font-semibold mb-4">Features</h2>
-            <ul className="space-y-4">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Features</h2>
+            <ul className="space-y-4 text-left">
               <li
-                className="flex items-center text-lg font-light"
+                className="flex items-center text-base font-light"
                 data-aos="fade-up"
                 data-aos-delay="500"
               >
-                <MdOutlineEventAvailable className="mr-2" /> Real-time parking
-                slot availability
+                <MdOutlineEventAvailable className="mr-2 text-xl" />
+                Real-time parking slot availability
               </li>
               <li
-                className="flex items-center text-lg font-light"
+                className="flex items-center text-base font-light"
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
-                <MdOutlinePayment className="mr-2" /> Instant booking and secure
-                payments
+                <MdOutlinePayment className="mr-2 text-xl" />
+                Instant booking and secure payments
               </li>
               <li
-                className="flex items-center text-lg font-light"
+                className="flex items-center text-base font-light"
                 data-aos="fade-up"
                 data-aos-delay="700"
               >
-                <MdOutlineNavigation className="mr-2" /> Easy navigation to
-                parking locations
+                <MdOutlineNavigation className="mr-2 text-xl" />
+                Easy navigation to parking locations
               </li>
               <li
-                className="flex items-center text-lg font-light"
+                className="flex items-center text-base font-light"
                 data-aos="fade-up"
                 data-aos-delay="800"
               >
-                <MdOutlineDateRange className="mr-2" /> Flexible booking options
-                for short or long stays
+                <MdOutlineDateRange className="mr-2 text-xl" />
+                Flexible booking options for short or long stays
               </li>
             </ul>
-            {/* More Button */}
-            {/* <button
-              className="mt-6 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-700 transition"
-              data-aos="fade-up"
-              data-aos-delay="850"
-              // onClick={() => navigate("/more")} // Navigate to the "/more" route
-            >
-              More
-            </button> */}
-            <div className="flex space-x-6 mt-6">
+
+            {/* App Store Buttons */}
+            <div className="flex flex-wrap justify-center lg:justify-start space-x-4 mt-8">
               <img
-                className="h-14"
+                className="h-12 sm:h-14"
                 src="assets/images/google-play-6647242_1280.png"
                 alt="Play Store"
                 data-aos="fade-up"
                 data-aos-delay="900"
               />
               <img
-                className="h-14"
+                className="h-12 sm:h-14"
                 src="assets/images/Download_on_the_App_Store_RGB_blk.svg.png"
                 alt="App Store"
                 data-aos="fade-up"

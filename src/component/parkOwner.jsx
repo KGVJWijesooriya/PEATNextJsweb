@@ -10,12 +10,15 @@ import {
 
 const ParkOwner = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      easing: "ease-out-cubic", // Easing function
-      once: false, // Whether the animation should happen only once
-    });
+    if (window.innerWidth >= 768) {
+      AOS.init({
+        duration: 800,
+        easing: "ease-out-cubic",
+        once: false,
+      });
+    }
   }, []);
+  
 
   return (
     <div className="bg-white px-6 py-12 h-[100vh] flex items-center justify-center">
