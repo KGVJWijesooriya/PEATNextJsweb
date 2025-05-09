@@ -5,7 +5,6 @@ import {
   Clock,
   Globe,
   CreditCard,
-  Smartphone,
   CheckCircle,
 } from "lucide-react";
 
@@ -60,11 +59,11 @@ const About = () => {
 
             {/* Image placeholder */}
             <div className="rounded-lg h-64 flex items-center justify-center bg-amber-100">
-              <img
+              {/* <img
                 src="/api/placeholder/400/320"
                 alt="PEAT app demonstration"
                 className="rounded-lg"
-              />
+              /> */}
             </div>
           </div>
         </div>

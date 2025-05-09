@@ -40,8 +40,9 @@ const Navbar = () => {
 
   // Close menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      if (isOpen && !event.target.closest(".mobile-menu-container")) {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (isOpen && !target.closest(".mobile-menu-container")) {
         setIsOpen(false);
       }
     };
