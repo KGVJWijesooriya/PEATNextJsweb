@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
 import { CiMenuBurger } from "react-icons/ci";
@@ -85,12 +86,15 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 transition-all duration-300">
             <Link href="/">
-              <img
+              <Image
                 src="/assets/images/logo.png"
+                width={scrolled ? 64 : 80}
+                height={scrolled ? 64 : 80}
                 className={`transition-all duration-300 ${
                   scrolled ? "h-16" : "h-20"
                 }`}
                 alt="Logo"
+                priority
               />
             </Link>
           </div>
@@ -150,8 +154,10 @@ const Navbar = () => {
             <div className="p-5 min-h-full flex flex-col">
               <div className="flex justify-between items-center mb-10">
                 <Link href="/">
-                  <img
+                  <Image
                     src="/assets/images/logo.png"
+                    width={64}
+                    height={64}
                     className="h-16"
                     alt="Logo"
                     onClick={() => setIsOpen(false)}
